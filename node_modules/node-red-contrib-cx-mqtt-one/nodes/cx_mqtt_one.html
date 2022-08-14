@@ -1,0 +1,95 @@
+<!-- ############################### TAGS IN ################################# -->
+
+<script type="text/javascript">
+  RED.nodes.registerType("mqtt one", {
+    category: "network",
+    color: "#d8bfd8",
+    defaults: {
+      name: {value: ""},
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "bridge.svg",
+    label: function() {
+      return this.name || "mqtt";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="mqtt one">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-tips">
+    Use APIs for this node.
+    <pre style="overflow-x: scroll; white-space: pre;">
+OUTPUTS:
+interface IMqttMessage {
+  brokerId: string | number,
+  topic: string, // mqtt topic or '__status/connection' or '__status/error'
+  payload: any
+}
+
+INPUTS:
+interface ISubscribeMessage {
+  command: "__subscribe", // to unsubscribe send payload.subscriptions = []
+  brokerId?: string | number,
+  payload?: {
+      subscriptions?: string[],
+  }
+}
+
+interface IPublishMessage {
+  command: "__publish",
+  brokerId?: string | number,
+  topic?: string;
+  payload?: any,
+  opts?: {
+    qos?: number,
+    retain?: boolean
+  }
+}
+
+interface IAddBrokerMessage {
+  command: "__add_broker",
+  brokerId?: string | number,
+  payload?: {
+      subscriptions?: string[],
+      options?: {
+          protocol: 'wss' | 'ws' | 'mqtt' | 'mqtts' | 'tcp' | 'ssl' | 'wx' | 'wxs'
+          port: number
+          host: string
+          hostname: string
+          username: string,
+          password: string,
+          path?: string
+          keepalive?: number
+          clientId?: string
+          protocolId?: string
+          protocolVersion?: number
+          clean?: boolean,
+          brokerId?: string | number
+      }
+  }
+}
+    </pre>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="mqtt one">
+  <h3>Inputs</h3>
+  <pre style="overflow-x: scroll; white-space: pre;">
+payload: {
+  tagName: value, // number or boolean
+}
+  </pre>
+  <p>OR</p>
+  <pre style="overflow-x: scroll; white-space: pre;">
+payload: {
+  value, // number or boolean
+},
+topic: string // tag name
+  </pre>
+</script>
+

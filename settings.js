@@ -20,7 +20,15 @@
  *
  **/
 var host = process.env.DBHOST || "s8ptv";
-var mongouri = process.env.DBURL || "mongodb+srv://" + process.env.DBUSER + ":" + process.env.DBPASS + "@cluster0." + host + ".mongodb.net/nrServer";
+var mongouri =
+  process.env.DBURL ||
+  "mongodb+srv://" +
+    process.env.DBUSER +
+    ":" +
+    process.env.DBPASS +
+    "@cluster0." +
+    host +
+    ".mongodb.net/nrServer";
 var appname = process.env.NRNS + "_" + process.env.APPID || "default_node";
 console.log(mongouri + " | " + appname);
 
@@ -56,12 +64,12 @@ module.exports = {
    * the user's home directory. To use a different location, the following
    * property can be used
    */
-  userDir: "/app/.node-red",
+  userDir: "/project/nrs",
 
   /** Node-RED scans the `nodes` directory in the userDir to find local node files.
    * The following property can be used to specify an additional directory to scan.
    */
-  nodesDir: "/app/.node-red/nodes",
+  nodesDir: "/project/nrs/nodes",
 
   /*******************************************************************************
    * Security
@@ -80,9 +88,9 @@ module.exports = {
     type: "credentials",
     users: [
       {
-       "username": process.env.USER,
-       "password": process.env.PASS,
-       "permissions": "*",
+        username: process.env.USER,
+        password: process.env.PASS,
+        permissions: "*",
       },
     ],
   },
@@ -169,7 +177,7 @@ module.exports = {
    * The following property can be used to specify a different root path.
    * If set to false, this is disabled.
    */
-  httpAdminRoot: '/admin',
+  httpAdminRoot: "/admin",
 
   /** The following property can be used to add a custom middleware function
    * in front of all admin http routes. For example, to set custom http
@@ -223,7 +231,7 @@ module.exports = {
    * following property can be used to identify a directory of static content
    * that should be served at http://localhost:1880/.
    */
-  httpStatic: './public',
+  httpStatic: "./public",
 
   /*******************************************************************************
    * Runtime Settings
@@ -408,8 +416,16 @@ module.exports = {
     //mongoURI: "mongodb+srv://user:pass@cluster0.cqm6vi1.mongodb.net/nodered",
     //mongodb+srv://user:<password>@cluster0.s8ptv.mongodb.net/?retryWrites=true&w=majority
     //host: cqm6vi1, s8ptv
-    mongoURI: process.env.DBURL || "mongodb+srv://" + process.env.DBUSER + ":" + process.env.DBPASS + "@cluster0." + host + ".mongodb.net/nrServer", 
-    appname: process.env.NRNS + "_" + process.env.APPID || "defautlnode"
+    mongoURI:
+      process.env.DBURL ||
+      "mongodb+srv://" +
+        process.env.DBUSER +
+        ":" +
+        process.env.DBPASS +
+        "@cluster0." +
+        host +
+        ".mongodb.net/nrServer",
+    appname: process.env.NRNS + "_" + process.env.APPID || "defautlnode",
   },
 
   /** The following property can be used to set predefined values in Global Context.
@@ -419,9 +435,9 @@ module.exports = {
    * will allow the `os` module to be accessed in a Function node using:
    *    global.get("os")
    */
-  
+
   functionGlobalContext: {
-     os:require('os'),
+    os: require("os"),
     //TelegrafMenu: require("telegraf-menu"),
     //TelegrafPagination: require("telegraf-pagination"),
     //TelegrafMenu: require("telegraf-menu"),
