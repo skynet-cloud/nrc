@@ -30,7 +30,7 @@
  
   },
   "scripts": {
-    "start": "node node_modules/node-red/red.js --settings /app/settings.js"
+    "start": "node node_modules/node-red/red.js --settings settings.js"
   }
   
 }
