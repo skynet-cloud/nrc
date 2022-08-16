@@ -9,7 +9,7 @@
     "nano": "latest",
     "feedparser": "latest",
     "redis": "latest",
-    "node-red": "latest",
+    "node-red": "^2.2.2",
     "node-red-debugger":"latest",
     "node-red-contrib-storage-mongodb": "latest",
     "node-red-contrib-mongodb4-dynamic":"latest",
