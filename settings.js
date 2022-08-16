@@ -56,12 +56,12 @@ module.exports = {
    * the user's home directory. To use a different location, the following
    * property can be used
    */
-  userDir: "/app/.node-red",
+  userDir: "/var/task",
 
   /** Node-RED scans the `nodes` directory in the userDir to find local node files.
    * The following property can be used to specify an additional directory to scan.
    */
-  nodesDir: "/app/.node-red/nodes",
+  nodesDir: "/var/task/nodes",
 
   /*******************************************************************************
    * Security
