@@ -30,7 +30,7 @@
  
   },
   "scripts": {
-    "start": "node node_modules/node-red/red.js --settings /project/nrc/settings.js"
+    "start": "node /project/nrc/node_modules/node-red/red.js --settings /project/nrc/settings.js"
   }
   
 }
