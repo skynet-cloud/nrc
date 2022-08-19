@@ -9,7 +9,7 @@
     "nano": "latest",
     "feedparser": "latest",
     "redis": "latest",
-    "node-red": "^2.2.2",
+    "node-red": "latest",
     "node-red-debugger":"latest",
     "node-red-contrib-storage-mongodb": "latest",
     "node-red-contrib-mongodb4-dynamic":"latest",
@@ -30,7 +30,7 @@
  
   },
   "scripts": {
-    "start": "node node_modules/node-red/red.js --settings settings.js"
+    "start": "node node_modules/node-red/red.js --settings /project/nrc/settings.js"
   }
   
 }
