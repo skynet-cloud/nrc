@@ -5,31 +5,32 @@
     "node": "16.x"
   },
   "dependencies": {
-    "moment": "latest",
-    "when": "latest",
-    "nano": "latest",
     "feedparser": "latest",
-    "redis": "latest",
+    "moment": "latest",
+    "nano": "latest",
     "node-red": "latest",
-    "node-red-debugger": "latest",
-    "node-red-contrib-storage-mongodb": "latest",
-    "node-red-contrib-mongodb4-dynamic": "latest",
     "node-red-contrib-actionflows": "latest",
     "node-red-contrib-aedes": "latest",
     "node-red-contrib-cron-plus": "latest",
+    "node-red-contrib-cx-mqtt-one": "latest",
     "node-red-contrib-loadbalance": "latest",
     "node-red-contrib-message-queue": "latest",
+    "node-red-contrib-mongodb4-dynamic": "latest",
     "node-red-contrib-msg-router": "latest",
+    "node-red-contrib-prib-functions": "latest",
     "node-red-contrib-routing": "latest",
     "node-red-contrib-simple-message-queue": "latest",
+    "node-red-contrib-storage-mongodb": "latest",
     "node-red-contrib-telegrambot": "latest",
-    "node-red-contrib-xterm": "latest",
-    "node-red-contrib-cx-mqtt-one": "latest",
     "node-red-contrib-timeout": "latest",
+    "node-red-contrib-uibuilder": "~5.1.1",
+    "node-red-contrib-xterm": "latest",
+    "node-red-debugger": "latest",
     "node-red-node-data-generator": "latest",
-    "node-red-contrib-prib-functions": "latest"
+    "redis": "latest",
+    "when": "latest"
   },
   "scripts": {
-    "start": "node node_modules/node-red/red.js --settings /project/nrs/settings.js"
+    "start": "node node_modules/node-red/red.js --settings /project/nrc/settings.js"
   }
 }
